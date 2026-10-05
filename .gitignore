@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Build output
+app/dist/
+app/dist2/
+app/dist_old_*/
+dist/
+build/output/
+
+# Vite scratch (temp config bundles)
+vite.config.js.timestamp-*.mjs
+
+# QA scratch: ignore everything in qa/ then re-allow only the scripts
+qa/*
+!qa/*.js
+!qa/*.py
+!qa/*.md
+
+# Screenshots and loose captures
+shots/
+
+# Extracted template / scratch dirs
+template_extract/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# WorkBuddy workspace metadata
+.workbuddy-ai/
