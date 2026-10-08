@@ -8,9 +8,13 @@ const BASE = path.resolve(__dirname, '..');
 const DIST = path.join(BASE, 'app', 'dist');
 const OUT = path.join(BASE, 'qa', 'shots');
 const PORT = 4192, CDP_PORT = 9342;
-const CHROME = fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
-  ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-  : 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+const CHROME = [
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+  '/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser',
+].find((p) => fs.existsSync(p)) || 'google-chrome';
 fs.mkdirSync(OUT, { recursive: true });
 const server = http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]);
