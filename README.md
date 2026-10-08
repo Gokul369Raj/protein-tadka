@@ -37,6 +37,24 @@ npm run build      # production build -> app/dist
 npm run preview    # preview the production build
 ```
 
+## Live site & deployment
+
+- **Production:** https://protein-tadka.vercel.app
+- **Repository:** https://github.com/Gokul369Raj/protein-tadka
+
+Vercel builds from the repo root — config lives in `vercel.json` (install + build in
+`app/`, output `app/dist`, SPA fallback rewrite so `/menu`, `/about`… work on a hard
+refresh, immutable caching for `/assets/*`, security headers). Pushes to `main`
+deploy automatically; for a manual production deploy:
+
+```bash
+vercel --yes --prod
+```
+
+The brand loading screen is inlined in `app/index.html` so it paints before any JS or
+CSS bundle, and is dismissed from `app/src/main.jsx` once React has painted and the
+page has loaded (hard-capped at 2.5 s so it can never stick).
+
 ## Project structure
 
 ```
