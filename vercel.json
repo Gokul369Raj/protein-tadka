@@ -5,9 +5,8 @@
   "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/dist",
   "trailingSlash": false,
-  "cleanUrls": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/:path*", "destination": "/index.html" }
   ],
   "headers": [
     {

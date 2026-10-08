@@ -77,7 +77,6 @@ export function VideoPlayer({
         <video
           ref={ref}
           className="vplayer-video"
-          poster={`/assets/video/${poster}`}
           preload="none"
           playsInline
           loop
@@ -92,7 +91,7 @@ export function VideoPlayer({
 
         {!playing && (
           <button className="vplayer-cover" onClick={toggle} aria-label={`Play ${caption || 'video'}`}>
-            <img src={`/assets/video/${poster}`} alt="" />
+            <img src={`/assets/video/${poster}`} alt="" loading="lazy" decoding="async" />
             <span className="vplayer-play"><Icon name="play" size={30} /></span>
             {badge && <span className="vplayer-badge">{badge}</span>}
           </button>
