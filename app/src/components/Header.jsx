@@ -64,7 +64,7 @@ export default function Header() {
       <header className={`site-head${scrolled ? ' scrolled' : ''}`}>
         <div className="wrap head-inner">
           <Link to="/" className="brand" aria-label="Protein Tadka Co. home">
-            <img className="brand-badge" src="./assets/img/logo-badge.png" alt="" width="700" height="700" />
+            <img className="brand-badge" src="/assets/img/logo-badge-256.webp" alt="" width="256" height="256" />
             <span className="brand-word">
               <span className="bw-top">Desi Fuel</span>
               <span className="bw-main">Protein Tadka</span>
@@ -126,7 +126,7 @@ export default function Header() {
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`} id="mobileMenu" aria-hidden={!mobileOpen}>
         <div className="mm-top">
           <div className="brand">
-            <img className="brand-badge" src="./assets/img/logo-badge.png" alt="" width="700" height="700" />
+            <img className="brand-badge" src="/assets/img/logo-badge-256.webp" alt="" width="256" height="256" />
             <span className="brand-word">
               <span className="bw-top">Desi Fuel</span>
               <span className="bw-main" style={{ color: '#fff' }}>Protein Tadka</span>

@@ -127,7 +127,7 @@ export function DishCard({ item, delay = 0 }) {
   return (
     <Reveal as="article" className="card" delay={delay} data-cat={item.cat} data-kind={item.kind}>
       <div className="card-media">
-        <img src={`./assets/img/${item.img}`} alt={item.name} loading="lazy" width="900" height="900" />
+        <img src={`/assets/img/${item.img}`} alt={item.name} loading="lazy" width="900" height="900" />
         <span className={`card-tag ${item.kind}`}>{item.tag}</span>
         <span className="card-protein">{item.protein}g Protein</span>
       </div>

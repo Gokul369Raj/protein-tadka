@@ -38,7 +38,7 @@ export default function About() {
         <div className="wrap">
           <div className="split">
             <Reveal className="split-media">
-              <img src="./assets/img/packaging.webp" alt="Protein Tadka premium packaging" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/packaging.webp" alt="Protein Tadka premium packaging" width="900" height="720" loading="lazy" />
             </Reveal>
             <div>
               <span className="eyebrow">Built In Delhi</span>
@@ -132,7 +132,7 @@ export default function About() {
               </div>
             </div>
             <Reveal className="split-media">
-              <img src="./assets/img/spread-flatlay.webp" alt="Prepared protein meals ready for delivery" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/spread-flatlay.webp" alt="Prepared protein meals ready for delivery" width="900" height="720" loading="lazy" />
             </Reveal>
           </div>
         </div>

@@ -33,7 +33,7 @@ export function VideoPlayer({
     if (!el || typeof IntersectionObserver === 'undefined') return;
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) { start(); io.unobserve(e.target); }
+        if (e.isIntersecting) { start({ silent: true }); io.unobserve(e.target); }
       });
     }, { threshold: 0.45 });
     io.observe(el);
@@ -41,11 +41,15 @@ export function VideoPlayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlayOnView, reduced]);
 
-  const start = () => {
+  // silent = forced-mute start (autoplay on view). A user-initiated start keeps
+  // whatever volume state they last chose, so "volume on" survives pause/play.
+  const start = ({ silent = false } = {}) => {
     const v = ref.current;
     if (!v) return;
-    v.muted = true;
-    setMuted(true);
+    if (silent) {
+      v.muted = true;
+      setMuted(true);
+    }
     const p = v.play();
     if (p && p.catch) p.catch(() => { /* user gesture required — stays on poster */ });
     setPlaying(true);
@@ -61,8 +65,10 @@ export function VideoPlayer({
     e.stopPropagation();
     const v = ref.current;
     if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
+    const next = !v.muted;
+    v.muted = next;
+    if (!next && v.volume === 0) v.volume = 1;
+    setMuted(next);
   };
 
   return (
@@ -71,22 +77,22 @@ export function VideoPlayer({
         <video
           ref={ref}
           className="vplayer-video"
-          poster={`./assets/video/${poster}`}
+          poster={`/assets/video/${poster}`}
           preload="none"
           playsInline
           loop
-          muted
+          muted={muted}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           aria-label={caption || 'Protein Tadka video'}
         >
-          <source src={`./assets/video/${src}`} type="video/mp4" />
+          <source src={`/assets/video/${src}`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         {!playing && (
           <button className="vplayer-cover" onClick={toggle} aria-label={`Play ${caption || 'video'}`}>
-            <img src={`./assets/video/${poster}`} alt="" />
+            <img src={`/assets/video/${poster}`} alt="" />
             <span className="vplayer-play"><Icon name="play" size={30} /></span>
             {badge && <span className="vplayer-badge">{badge}</span>}
           </button>

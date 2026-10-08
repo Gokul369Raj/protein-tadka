@@ -43,3 +43,6 @@ desktop.ini
 
 # WorkBuddy workspace metadata
 .workbuddy-ai/
+
+# Vercel
+.vercel/

@@ -453,12 +453,13 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Toast ---------- */
 .toast {
-  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(120%);
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(calc(100% + 40px));
   background: var(--green-900); color: #fff; padding: 14px 24px; border-radius: var(--r-pill);
   box-shadow: var(--shadow-lg); z-index: 200; display: flex; align-items: center; gap: 11px;
-  transition: transform .34s var(--ease); font-weight: 600; font-size: .94rem;
+  transition: transform .34s var(--ease), visibility .34s; font-weight: 600; font-size: .94rem;
+  visibility: hidden; pointer-events: none;
 }
-.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.show { transform: translateX(-50%) translateY(0); visibility: visible; pointer-events: auto; }
 .toast svg { width: 20px; height: 20px; color: var(--yellow-500); }
 
 /* ---------- Page hero (inner pages) ---------- */
@@ -571,6 +572,20 @@ p { margin: 0 0 1rem; }
 main > * { animation: routeIn .32s var(--ease) both; }
 @keyframes routeIn { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { main > * { animation: none; } }
+
+/* Lazy-route loading state */
+.route-load {
+  min-height: 50vh; display: grid; place-items: center; align-content: center; gap: 14px;
+  color: var(--ink-soft); font-weight: 600;
+}
+.route-load .ring {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 4px solid var(--green-50); border-top-color: var(--green-600);
+  animation: routeSpin .75s linear infinite;
+}
+.route-load .route-load-txt { font-family: var(--font-display); letter-spacing: .08em; text-transform: uppercase; font-size: .9rem; }
+@keyframes routeSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .route-load .ring { animation-duration: 2s; } }
 
 /* Toast idle state must not intercept clicks */
 .toast { pointer-events: none; }

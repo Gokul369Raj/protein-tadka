@@ -70,7 +70,7 @@ export function CartProvider({ children }) {
     return { lines, count, subtotal, delivery, total: subtotal + delivery, freeDelivery };
   }, [items]);
 
-  const value = { items, lines, count, subtotal, delivery, total, freeDelivery, add, setQty, remove, clear, isOpen, setOpen };
+  const value = { items, lines, count, subtotal, delivery, total, freeDelivery, add, setQty, remove, clear, isOpen, setOpen, toast };
   return <CartCtx.Provider value={value}>{children}</CartCtx.Provider>;
 }
 

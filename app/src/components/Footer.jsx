@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <div className="brand">
-              <img className="brand-badge" src="./assets/img/logo-badge.png" alt="" width="700" height="700" />
+              <img className="brand-badge" src="/assets/img/logo-badge-256.webp" alt="" width="256" height="256" />
               <span className="brand-word">
                 <span className="bw-top">Desi Fuel</span>
                 <span className="bw-main">Protein Tadka</span>

@@ -138,7 +138,7 @@ export default function Delivery() {
               </div>
             </div>
             <Reveal className="split-media">
-              <img src="./assets/img/packaging.webp" alt="Insulated Protein Tadka delivery packaging" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/packaging.webp" alt="Insulated Protein Tadka delivery packaging" width="900" height="720" loading="lazy" />
             </Reveal>
           </div>
         </div>

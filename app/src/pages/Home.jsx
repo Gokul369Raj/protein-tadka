@@ -74,7 +74,7 @@ export default function Home() {
           <div className="hero-media">
             <div className="hero-card">
               <img
-                src="./assets/img/hero-bowl.webp"
+                src="/assets/img/hero-bowl.webp"
                 alt="High protein grilled chicken power bowl from Protein Tadka"
                 width="900" height="1125" fetchPriority="high"
               />
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="wrap">
           <div className="split">
             <Reveal className="split-media">
-              <img src="./assets/img/cat-mac.webp" alt="High protein tadka mac and cheese" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/cat-mac.webp" alt="High protein tadka mac and cheese" width="900" height="720" loading="lazy" />
             </Reveal>
             <div>
               <span className="eyebrow">Signature Series</span>
@@ -259,7 +259,7 @@ export default function Home() {
               <Link to="/menu#tofu" className="btn btn-dark" style={{ marginTop: 28 }}>Explore Veg Bowls</Link>
             </div>
             <Reveal className="split-media">
-              <img src="./assets/img/cat-tofu.webp" alt="High protein tofu power bowl" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/cat-tofu.webp" alt="High protein tofu power bowl" width="900" height="720" loading="lazy" />
             </Reveal>
           </div>
         </div>
@@ -320,7 +320,7 @@ export default function Home() {
         <div className="wrap">
           <div className="split">
             <Reveal className="split-media">
-              <img src="./assets/img/spread-flatlay.webp" alt="Protein Tadka meal spread flat lay" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/spread-flatlay.webp" alt="Protein Tadka meal spread flat lay" width="900" height="720" loading="lazy" />
             </Reveal>
             <div>
               <span className="eyebrow">How It Works</span>

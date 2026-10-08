@@ -66,7 +66,7 @@ export default function Order() {
               ) : (
                 lines.map((l) => (
                   <div className="order-line" key={l.id}>
-                    <img src={`./assets/img/${l.item.img}`} alt={l.item.name} width="96" height="96" loading="lazy" />
+                    <img src={`/assets/img/${l.item.img}`} alt={l.item.name} width="96" height="96" loading="lazy" />
                     <div className="ol-info">
                       <b>{l.item.name}</b>
                       <small>{l.item.protein}g protein · {l.item.kcal} kcal · {CATEGORIES[l.item.cat].short}</small>
@@ -120,7 +120,7 @@ export default function Order() {
           <div className="quick-add">
             {MENU.slice(0, 8).map((m) => (
               <Reveal className="qa-row" key={m.id}>
-                <img src={`./assets/img/${m.img}`} alt={m.name} width="64" height="64" loading="lazy" />
+                <img src={`/assets/img/${m.img}`} alt={m.name} width="64" height="64" loading="lazy" />
                 <div className="qa-info">
                   <b>{m.name}</b>
                   <small>{m.protein}g protein · {m.kcal} kcal</small>

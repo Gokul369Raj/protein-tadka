@@ -22,8 +22,9 @@ const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 function PageFallback() {
   return (
-    <div style={{ minHeight: '60vh', display: 'grid', placeItems: 'center' }}>
-      <div aria-live="polite" style={{ color: 'var(--ink-soft)' }}>Loading…</div>
+    <div className="route-load" role="status" aria-live="polite">
+      <span className="ring" aria-hidden="true" />
+      <span className="route-load-txt">Loading…</span>
     </div>
   );
 }

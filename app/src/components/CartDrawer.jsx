@@ -58,7 +58,7 @@ export default function CartDrawer() {
           ) : (
             lines.map((l) => (
               <div className="cart-line" key={l.id}>
-                <img src={`./assets/img/${l.item.img}`} alt={l.item.name} width="68" height="68" loading="lazy" />
+                <img src={`/assets/img/${l.item.img}`} alt={l.item.name} width="68" height="68" loading="lazy" />
                 <div className="cl-info">
                   <b>{l.item.name}</b>
                   <small>{l.item.protein}g protein · {l.item.kcal} kcal</small>

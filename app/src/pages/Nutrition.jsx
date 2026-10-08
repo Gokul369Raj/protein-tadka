@@ -151,7 +151,7 @@ export default function Nutrition() {
               </div>
             </div>
             <Reveal className="split-media">
-              <img src="./assets/img/cat-salad.webp" alt="Lean high protein chicken salad" width="900" height="720" loading="lazy" />
+              <img src="/assets/img/cat-salad.webp" alt="Lean high protein chicken salad" width="900" height="720" loading="lazy" />
             </Reveal>
           </div>
         </div>

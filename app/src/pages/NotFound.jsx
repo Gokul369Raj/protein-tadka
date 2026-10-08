@@ -46,7 +46,7 @@ export default function NotFound() {
           <div className="quick-add">
             {SUGGESTED.map((m) => (
               <Link className="qa-row nf-qa" to="/menu" key={m.id}>
-                <img src={`./assets/img/${m.img}`} alt={m.name} width="64" height="64" loading="lazy" />
+                <img src={`/assets/img/${m.img}`} alt={m.name} width="64" height="64" loading="lazy" />
                 <div className="qa-info">
                   <b>{m.name}</b>
                   <small>{m.protein}g protein · {m.kcal} kcal</small>
