@@ -1,0 +1,13 @@
+# Never upload local deps / builds / scratch (Vercel installs & builds on its side)
+node_modules
+**/node_modules
+.vercel
+app/dist
+app/dist_old_*
+qa
+shots
+brand
+site
+build
+*.log
+.DS_Store
